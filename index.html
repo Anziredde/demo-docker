@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tollywood Movie Ticket Booking</title>
+
+https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background: linear-gradient(135deg,#0f172a,#1e293b);
+    color:white;
+}
+
+header{
+    background:black;
+    padding:20px;
+    text-align:center;
+    box-shadow:0 0 15px gold;
+}
+
+header h1{
+    color:#FFD700;
+    font-size:40px;
+}
+
+header p{
+    color:#ddd;
+}
+
+.movies-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:25px;
+    padding:40px;
+}
+
+.movie-card{
+    background:#1e293b;
+    border-radius:15px;
+    overflow:hidden;
+    box-shadow:0 0 20px rgba(255,215,0,0.2);
+    transition:0.4s;
+}
+
+.movie-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px gold;
+}
+
+.movie-card img{
+    width:100%;
+    height:420px;
+    object-fit:cover;
+}
+
+.movie-content{
+    padding:20px;
+}
+
+.movie-content h2{
+    color:#FFD700;
+    margin-bottom:10px;
+}
+
+.price{
+    font-size:18px;
+    color:#4ade80;
+    margin-bottom:10px;
+}
+
+select,input{
+    width:100%;
+    padding:10px;
+    margin-top:10px;
+    border:none;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.book-btn{
+    margin-top:15px;
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:10px;
+    background:#FFD700;
+    color:black;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.book-btn:hover{
+    background:#facc15;
+    transform:scale(1.05);
+}
+
+#summary{
+    width:90%;
+    max-width:600px;
+    margin:30px auto;
+    background:#111827;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 20px rgba(255,215,0,0.3);
+}
+
+#summary h2{
+    color:#FFD700;
+    margin-bottom:15px;
+    text-align:center;
+}
+
+.booking-details{
+    font-size:18px;
+    line-height:1.8;
+}
+
+footer{
+    text-align:center;
+    padding:20px;
+    background:black;
+    color:#ccc;
+    margin-top:30px;
+}
+
+</style>
+
+</head>
+<body>
+
+<header>
+    <h1>🎬 Tollywood Movie Tickets</h1>
+    <p>Book Your Favorite Movie Instantly</p>
+</header>
+
+<section class="movies-container">
+
+    <!-- Movie 1 -->
+    <div class="movie-card">
+        0a/Pushpa_The_Rule.jpg">
+        <div class="movie-content">
+            <h2>Pushpa 2</h2>
+            <p class="price">Ticket Price: ₹250</p>
+
+            <select id="time1">
+                <option>10:00 AM</option>
+                <option>2:00 PM</option>
+                <option>6:00 PM</option>
+                <option>10:00 PM</option>
+            </select>
+
+            <input type="number" id="qty1" min="1" value="1">
+
+            <button class="book-btn"
+            onclick="bookTicket('Pushpa 2',250,'time1','qty1')">
+            Book Now
+            </button>
+        </div>
+    </div>
+
+    <!-- Movie 2 -->
+    <div class="movie-card">
+        /wikipedia/en/d/d7/Salaar.jpg">
+        <div class="movie-content">
+            <h2>Salaar</h2>
+            <p class="price">Ticket Price: ₹220</p>
+
+            <select id="time2">
+                <option>9:00 AM</option>
+                <option>1:00 PM</option>
+                <option>5:00 PM</option>
+                <option>9:00 PM</option>
+            </select>
+
+            <input type="number" id="qty2" min="1" value="1">
+
+            <button class="book-btn"
+            onclick="bookTicket('Salaar',220,'time2','qty2')">
+            Book Now
+            </button>
+        </div>
+    </div>
+
+    <!-- Movie 3 -->
+    <div class="movie-card">
+        /en/4/4b/RRR_Poster.jpg">
+        <div class="movie-content">
+            <h2>RRR</h2>
+            <p class="price">Ticket Price: ₹200</p>
+
+            <select id="time3">
+                <option>11:00 AM</option>
+                <option>3:00 PM</option>
+                <option>7:00 PM</option>
+                <option>11:00 PM</option>
+            </select>
+
+            <input type="number" id="qty3" min="1" value="1">
+
+            <button class="book-btn"
+            onclick="bookTicket('RRR',200,'time3','qty3')">
+            Book Now
+            </button>
+        </div>
+    </div>
+
+    <!-- Movie 4 -->
+    <div class="movie-card">
+        https://upload.wikimedia.org/wikipedia/en/6/65/Devara_poster.jpg
+        <div class="movie-content">
+            <h2>Devara</h2>
+            <p class="price">Ticket Price: ₹280</p>
+
+            <select id="time4">
+                <option>10:30 AM</option>
+                <option>2:30 PM</option>
+                <option>6:30 PM</option>
+                <option>10:30 PM</option>
+            </select>
+
+            <input type="number" id="qty4" min="1" value="1">
+
+            <button class="book-btn"
+            onclick="bookTicket('Devara',280,'time4','qty4')">
+            Book Now
+            </button>
+        </div>
+    </div>
+
+</section>
+
+<div id="summary">
+    <h2>🎟 Booking Summary</h2>
+    <div class="booking-details" id="result">
+        Select a movie and click Book Now.
+    </div>
+</div>
+
+<footer>
+    © 2026 Tollywood Ticket Booking | Enjoy the Show 🍿
+</footer>
+
+<script>
+
+function bookTicket(movieName, price, timeId, qtyId){
+
+    let showTime = document.getElementById(timeId).value;
+    let quantity = parseInt(document.getElementById(qtyId).value);
+
+    let total = quantity * price;
+
+    document.getElementById("result").innerHTML = `
+        <strong>Movie:</strong> ${movieName}<br>
+        <strong>Show Time:</strong> ${showTime}<br>
+        <strong>Tickets:</strong> ${quantity}<br>
+        <strong>Price per Ticket:</strong> ₹${price}<br>
+        <strong>Total Amount:</strong> ₹${total}
+    `;
+
+    alert(
+        "Booking Successful!\n\n" +
+        "Movie: " + movieName +
+        "\nTickets: " + quantity +
+        "\nTotal: ₹" + total
+    );
+}
+
+</script>
+
+</body>
+</html>  
